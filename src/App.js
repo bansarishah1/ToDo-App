@@ -5,6 +5,8 @@ import Cards from './Components/Card/Cards';
 
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+
 
 function App() {
 const [todoList, setTodoList] = useState([])
@@ -51,7 +53,6 @@ const deleteHandler = (id) => {
       setTodoList([...todoList])
       localStorage.setItem("data",JSON.stringify(todoList)) //updating local storage with state
 }
-console.log(todoList)
 
   return (
     
@@ -62,15 +63,22 @@ console.log(todoList)
         <TextField id="outlined-basic" label="Title" variant="outlined" 
         value={input} name='todo' onChange={(e) => setInput(e.target.value)} />
 
-        <TextField
-          id="outlined-multiline-static"
-          label="Description"
-          name='description'
-          value={description}
-          multiline rows={3}
-          onChange={(e) => setDescription(e.target.value)}
+        <Box
+        sx={{
+          width: 500,
+          maxWidth: '100%',
+        }}
+      >
+        <TextField fullWidth label="Description" 
+        id="fullWidth" 
+        name='description'
+        value={description}
+        multiline rows={3}
+        onChange={(e) => setDescription(e.target.value)}
         />
-        <Button variant="contained" onClick={AddHandler}>Add</Button> 
+        </Box>
+
+     <Button variant="contained" onClick={AddHandler}>Add</Button> 
       </div>
 
       <div className='output-container'>  

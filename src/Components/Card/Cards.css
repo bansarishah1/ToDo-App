@@ -2,3 +2,21 @@
     min-width: 10%;
     margin: 0px 10px;
 }
+.card-complete-button-container{
+    cursor: pointer;
+}
+.card-complete-button-container:hover{
+    color: green;
+}
+.card-delete-button-container{
+    cursor: pointer;
+}
+.card-delete-button-container:hover{
+    color: red;
+}
+/* .card-color-button-container{
+    cursor: pointer;
+}
+.card-color-button-container:hover{
+    color: darkcyan;
+} */
