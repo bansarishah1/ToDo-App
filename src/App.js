@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react'
 import './App.css';
 import Cards from './Components/Card/Cards';
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
 //import {Data} from './Utils/Data'
 
 import TextField from '@mui/material/TextField';
@@ -20,7 +22,8 @@ useEffect(()=>{
   }
 },[])
 
-const AddHandler = () => {
+const AddHandler = (e) => {
+  e.preventDefault()
     const todo = {
       title: input, 
       id:Math.random(), 
@@ -57,6 +60,7 @@ const deleteHandler = (id) => {
   return (
     
     <div className='main-container'>
+      <Header />
 
       <div className='input-container'>
 
@@ -122,6 +126,7 @@ const deleteHandler = (id) => {
         </div>
 
       </div> 
+      <Footer />
 
     </div>
 

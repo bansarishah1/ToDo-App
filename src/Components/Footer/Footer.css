@@ -1,7 +1,8 @@
 .footer-wrapper{
-    height: 90%;
+    height: 2%;
     width: 100%;
-    background-color: black;
+    background-color: #2F58CD;
+    color: white;
     text-align: center;
     position: fixed;
     bottom: 0;

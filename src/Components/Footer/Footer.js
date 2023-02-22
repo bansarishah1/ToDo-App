@@ -1,9 +1,10 @@
+import './Footer.css'
 import React from 'react'
 
 const Footer = () => {
   return (
     <div className='footer-wrapper'>
-        <h3>Created by Bansari Shah </h3> 
+        <h5>Created by Bansari Shah </h5> 
     </div>
   )
 }
