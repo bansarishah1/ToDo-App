@@ -94,9 +94,9 @@ const UpdateColor = (id, color) => {
       </div>
 
       <div className='output-container'>  
-
+      <h4>Pending</h4>
         <div className='card-container'>
-          <h4>Pending</h4>
+          
           <div className='card-list'>
             {
               todoList?.map((e) => {
@@ -119,9 +119,10 @@ const UpdateColor = (id, color) => {
             }
           </div>  
         </div> 
-        
+        <br />
+        <h4>Completed</h4>
         <div className='card-container'>
-            <h4>Completed</h4>
+            
             <div className='card-list'></div>  
             {
                 todoList?.map((e) => {
