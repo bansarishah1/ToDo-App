@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import './App.css';
 import Cards from './Components/Card/Cards';
 import Header from './Components/Header/Header';
-import Footer from './Components/Footer/Footer';
+//import Footer from './Components/Footer/Footer';
 //import {Data} from './Utils/Data'
 
 import TextField from '@mui/material/TextField';
@@ -23,7 +23,6 @@ useEffect(()=>{
 },[])
 
 const AddHandler = (e) => {
-  e.preventDefault()
     const todo = {
       title: input, 
       id:Math.random(), 
@@ -55,6 +54,15 @@ const deleteHandler = (id) => {
       todo.isDeleted = true
       setTodoList([...todoList])
       localStorage.setItem("data",JSON.stringify(todoList)) //updating local storage with state
+}
+
+const UpdateColor = (id, color) => {
+
+  const todo = todoList.find(e => e.id === id); // finds the element with id 
+  todo.color = color // changes are made which are reflected automatically
+  
+  setTodoList([...todoList]) //updating the current state
+  localStorage.setItem("data", JSON.stringify(todoList)) //updating local storage with state
 }
 
   return (
@@ -96,7 +104,10 @@ const deleteHandler = (id) => {
                   return(
                     <div>
                       {!e.isDeleted &&
-                        <Cards key={e.id} id={e.id} title={e.title} description={e.description} complete={completeHandler} delete={deleteHandler} isCompleted={e.isCompleted} />
+                        <Cards key={e.id} id={e.id} title={e.title} description={e.description} 
+                        complete={completeHandler} delete={deleteHandler} 
+                        isCompleted={e.isCompleted} 
+                        updateColor={UpdateColor} color={e.color} />
                       }
                     </div>
                   )
@@ -116,7 +127,10 @@ const deleteHandler = (id) => {
                 todoList?.map((e) => {
                   if(e.isCompleted){
                     return (!e.isDeleted &&
-                      <Cards key={e.id} id={e.id} title={e.title} description={e.description} complete={completeHandler} delete={deleteHandler} isCompleted={e.isCompleted} />
+                      <Cards key={e.id} id={e.id} title={e.title} description={e.description} 
+                      complete={completeHandler} delete={deleteHandler} 
+                      isCompleted={e.isCompleted}
+                      updateColor={UpdateColor} color={e.color} />
                     )
                   } else{
                     return <></>
@@ -126,7 +140,7 @@ const deleteHandler = (id) => {
         </div>
 
       </div> 
-      <Footer />
+      
 
     </div>
 

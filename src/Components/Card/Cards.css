@@ -14,9 +14,9 @@
 .card-delete-button-container:hover{
     color: red;
 }
-/* .card-color-button-container{
+.card-color-button-container{
     cursor: pointer;
 }
 .card-color-button-container:hover{
     color: darkcyan;
-} */
+}
